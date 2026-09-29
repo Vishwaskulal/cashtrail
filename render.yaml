@@ -2,6 +2,7 @@ services:
   # Backend FastAPI Service
   - type: web
     name: cashtrail-backend
+    plan: free
     env: python
     buildCommand: "pip install -r backend/requirements.txt"
     startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
@@ -9,9 +10,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.10.0
       - key: FRONTEND_URL
-        value: "https://cashtrail-frontend.onrender.com" # Replace with actual frontend URL
+        value: "https://cashtrail-frontend.onrender.com"
 
-  # Frontend Vite Service
+  # Frontend Vite Static Site
   - type: web
     name: cashtrail-frontend
     env: static
@@ -21,4 +22,4 @@ services:
       - key: NODE_VERSION
         value: 18.0.0
       - key: VITE_API_BASE_URL
-        value: "https://cashtrail-backend.onrender.com" # Replace with actual backend URL
+        value: "https://cashtrail-backend.onrender.com"
