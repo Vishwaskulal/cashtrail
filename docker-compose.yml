@@ -1,0 +1,17 @@
+version: '3.8'
+
+# This is a skeleton docker-compose.yml for future use.
+# Docker deployment will be configured in a later step.
+
+services:
+  # Database will be configured here
+  # db:
+  #   image: mysql:8.0
+  
+  # Backend API will be configured here
+  # backend:
+  #   build: ./backend
+  
+  # Frontend will be configured here
+  # frontend:
+  #   build: ./frontend

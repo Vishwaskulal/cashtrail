@@ -1,0 +1,84 @@
+{
+    "model_name": "CashTrail XGBoost Location Risk Model",
+    "model_version": "1.0.0",
+    "training_date": "2026-09-29T16:56:28.127445",
+    "dataset_version": "synthetic_v1",
+    "features": [
+        "transaction_amount",
+        "transaction_count",
+        "transaction_velocity",
+        "fraud_hour",
+        "fraud_day",
+        "distance_to_location",
+        "historical_similarity",
+        "location_activity_score",
+        "night_activity_score",
+        "withdrawal_frequency",
+        "crime_category"
+    ],
+    "target_name": "target_risk",
+    "training_case_count": 3500,
+    "validation_case_count": 750,
+    "test_case_count": 750,
+    "random_seed": 42,
+    "evaluation_metrics": {
+        "Baseline": {
+            "MAE": 0.050764549056574786,
+            "RMSE": 0.059113354323765695,
+            "R2": 0.8214850448627001,
+            "Hit@1": 0.372,
+            "Hit@3": 0.832,
+            "Hit@5": 1.0
+        },
+        "XGBoost": {
+            "MAE": 0.05154262511286818,
+            "RMSE": 0.060351123791467544,
+            "R2": 0.8139309583590103,
+            "Hit@1": 0.36666666666666664,
+            "Hit@3": 0.8146666666666667,
+            "Hit@5": 1.0
+        }
+    },
+    "top_features_shap": [
+        {
+            "feature": "historical_similarity",
+            "importance": 0.08640822955640033
+        },
+        {
+            "feature": "transaction_velocity",
+            "importance": 0.04566973348424902
+        },
+        {
+            "feature": "night_activity_score",
+            "importance": 0.032534196041750583
+        },
+        {
+            "feature": "fraud_hour",
+            "importance": 0.030336261198855942
+        },
+        {
+            "feature": "transaction_amount",
+            "importance": 0.00217472404493019
+        },
+        {
+            "feature": "distance_to_location",
+            "importance": 0.0020757123159244636
+        },
+        {
+            "feature": "location_activity_score",
+            "importance": 0.0019739408719220346
+        },
+        {
+            "feature": "withdrawal_frequency",
+            "importance": 0.0016468553529120978
+        },
+        {
+            "feature": "transaction_count",
+            "importance": 0.0014240988668054344
+        },
+        {
+            "feature": "fraud_day",
+            "importance": 0.0009626425076542154
+        }
+    ]
+}
